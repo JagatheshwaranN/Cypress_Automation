@@ -66,4 +66,3 @@ Cypress.Commands.add('loginApp', (email, password)=>{
     cy.get('#Password').type(password);
     cy.get('.button-1.login-button').click();
 })
-
