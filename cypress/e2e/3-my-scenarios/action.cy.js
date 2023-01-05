@@ -45,5 +45,10 @@ context('Actions Demo', ()=>{
         cy.get('.form-check-label > input[type="checkbox"]').click({multiple:true});
     })
 
+    it('Verify Actions Demo - Trigger', ()=>{
+
+        cy.visit('https://groww.in/calculators/sip-calculator');
+        cy.get('#MONTHLY_INVESTMENT').invoke('val',35000).trigger('change').get('#MONTHLY_INVESTMENT').should('have.value', 35000);    
+    })
 
 })

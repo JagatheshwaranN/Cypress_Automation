@@ -14,7 +14,7 @@ describe('Dropdown Demo', ()=> {
         cy.get('#select2-billing_country-container').should('have.text','Japan');
     })
 
-    it.skip('Verify Static Auto Suggest Dropdown', ()=>{
+    it('Verify Static Auto Suggest Dropdown', ()=>{
         cy.visit('https://www.wikipedia.org/');
         cy.get('#searchInput').type('Chennai');
         cy.get('.suggestions-dropdown .suggestion-title').contains('Chennai Central railway station').click();
@@ -32,4 +32,12 @@ describe('Dropdown Demo', ()=> {
         })
         cy.get('input[name="q"]').should('have.value','cypress tree');
     })
+
+    it('Verify Multiple Select Dropdown', ()=>{
+
+        cy.visit('cypress/frontend/action.html');
+        cy.get('#cars').select(['Volvo', 'Saab']).invoke('val').should('deep.equal', ['volvo', 'saab']);
+    })
+
+
 })
