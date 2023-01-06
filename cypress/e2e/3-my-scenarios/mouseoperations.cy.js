@@ -35,11 +35,6 @@ describe('Mouse Operations Demo', ()=>{
         cy.get('#box6').drag('#box106',{force:true});
         cy.wait(5000);
     })
-
-    it.only('Verify Page Scrolling', ()=>{
-        cy.visit('https://www.countries-ofthe-world.com/flags-of-the-world.html');
-        cy.get('img[alt="Flag of India"]').scrollIntoView({duration:2000});
-    })
-    
+   
 })
 
