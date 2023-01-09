@@ -108,6 +108,16 @@ context('Element Traversal Demo', ()=>{
         cy.get('.order-list .active').siblings().should('have.length', 4);
     })
 
+    it.only('Verify Element Traversal - End', ()=>{
+
+        cy.visit('https://example.cypress.io/commands/misc');
+        cy.get('.table.table-bordered.misc-table').within(()=>{
+            cy.contains('Cheryl').click().end();
+            cy.contains('User: Darryl').click();
+            cy.log('Completed test');
+        })
+    })
+
 
 
 

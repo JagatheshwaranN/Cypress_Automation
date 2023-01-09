@@ -51,4 +51,11 @@ context('Actions Demo', ()=>{
         cy.get('#MONTHLY_INVESTMENT').invoke('val',35000).trigger('change').get('#MONTHLY_INVESTMENT').should('have.value', 35000);    
     })
 
+    it.only('Verify Actions Demo - Focused', ()=>{
+
+        cy.visit('https://letcode.in/edit');
+        cy.get('#fullName').click();
+        cy.focused().should('have.id', 'fullName');
+    })
+
 })
