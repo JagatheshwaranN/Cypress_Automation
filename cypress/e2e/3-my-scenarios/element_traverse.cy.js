@@ -114,7 +114,6 @@ context('Element Traversal Demo', ()=>{
         cy.get('.table.table-bordered.misc-table').within(()=>{
             cy.contains('Cheryl').click().end();
             cy.contains('User: Darryl').click();
-            cy.log('Completed test');
         })
     })
 
