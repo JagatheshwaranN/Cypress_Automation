@@ -46,7 +46,7 @@ describe('Network Request Demo', ()=>{
             expect(response).property('status').to.equal(201);
             expect(response).property('body').to.contain({
                 name:"Cypress"
-            })
+            });
             expect(response.body).property('id').to.be.a('number').and.to.be.gt(100);
         })
     })
