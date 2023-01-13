@@ -25,7 +25,7 @@ describe('Connectors Demo', ()=>{
         cy.get('#displayed-text').invoke('hide').should('be.hidden');
     })
 
-    it('Verify Connect - spread', ()=>{
+    it('Verify Connectors - spread', ()=>{
 
         const arr = ['apple', 'orange', 'grapes'];
         cy.wrap(arr).spread((apple, orange, grapes)=>{
