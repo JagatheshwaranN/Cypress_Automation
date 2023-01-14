@@ -25,4 +25,4 @@ require('@4tw/cypress-drag-drop')
 require('cypress-file-upload')
 import 'cypress-mochawesome-reporter/register';
 import './commands';
-
+import 'cypress-localstorage-commands';

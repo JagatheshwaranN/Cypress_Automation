@@ -32,7 +32,7 @@ describe('Verify IO Operations Demo', ()=>{
         })
     })
 
-    it.only('Write File', ()=>{
+    it('Write File', ()=>{
 
         cy.request('https://jsonplaceholder.cypress.io/users/2')
         .then((response)=>{

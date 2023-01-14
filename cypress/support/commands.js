@@ -31,6 +31,7 @@ import 'cypress-xpath'
 import 'cypress-iframe'
 import '@4tw/cypress-drag-drop'
 import 'cypress-file-upload'
+import 'cypress-localstorage-commands'
 
 // To get the Frame on the page
 Cypress.Commands.add('getFrame',(frameLocator)=>{
