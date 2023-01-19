@@ -7,7 +7,7 @@ beforeEach('Verify Launch', ()=>{
 it('Visit any sub-domain of your current domain', ()=>{
 
     cy.visit('https://example.cypress.io/commands/navigation', {
-        timeout: 50000,
+        timeout: 10000,
         onBeforeLoad(window) {
             expect(typeof window === 'object').to.be.true
         },

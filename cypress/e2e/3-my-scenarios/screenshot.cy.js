@@ -7,7 +7,7 @@ describe('Capture Screenshot Demo', ()=>{
         cy.get('#menu').screenshot('opencart_menu');
     })
 
-    it.only('Verify capture screenshot demo', ()=>{
+    it.only('Verify capture screenshot demo with options', ()=>{
 
         cy.visit('https://demo.opencart.com/');
         cy.screenshot('opencart', {overwrite:true});
