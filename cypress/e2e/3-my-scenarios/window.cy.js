@@ -6,7 +6,7 @@ context('Window Demo', ()=>{
         cy.window().should('have.property', 'top');
     })
 
-    it('Verify window demo', ()=>{
+    it('Verify document demo', ()=>{
 
         cy.visit('https://www.cypress.io/');
         cy.document().should('have.property', 'charset').and('eq','UTF-8');
