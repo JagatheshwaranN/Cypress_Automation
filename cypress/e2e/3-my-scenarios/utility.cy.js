@@ -32,9 +32,9 @@ cy.get('.utility-blob').then(($div)=>{
 return Cypress.Blob
 .imgSrcToDataURL('https://miro.medium.com/max/720/1*LjR0UrFB2a__5h1DWqzstA.webp', undefined, 'anonymous')
 .then((data)=>{
-    let img = Cypress.$('<img/>', {src:data});
-    $div.append(img);
-    cy.get('.utility-blob img').should('have.attr','src', data);
+let img = Cypress.$('<img/>', {src:data});
+$div.append(img);
+cy.get('.utility-blob img').should('have.attr','src', data);
 })
 })
 })
@@ -55,26 +55,26 @@ it('Verify Promise', ()=>{
 
 let waited = false;
 function waitForSomeTime() {
+return new Cypress.Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        waited = true;
+        resolve('some');
+    }, 1000)
+}).then(function(str){
     return new Cypress.Promise((resolve, reject)=>{
         setTimeout(()=>{
-            waited = true;
-            resolve('some');
-        }, 1000)
-    }).then(function(str){
-        return new Cypress.Promise((resolve, reject)=>{
-            setTimeout(()=>{
-                str+='thing';
-                resolve(str);
-            },1000);
-        })
+            str+='thing';
+            resolve(str);
+        },1000);
     })
+})
 }
 
 cy.then(()=>{
-    return waitForSomeTime().then((data)=>{
-        expect(data).to.eq('something');
-        expect(waited).to.be.true;
-    })
+return waitForSomeTime().then((data)=>{
+    expect(data).to.eq('something');
+    expect(waited).to.be.true;
+})
 })
 })
 
