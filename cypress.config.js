@@ -11,4 +11,8 @@ module.exports = defineConfig({
       return config;
     },
   },
+  env : {
+    foo: 'bar',
+    baz: 'quack'
+  }
 });
