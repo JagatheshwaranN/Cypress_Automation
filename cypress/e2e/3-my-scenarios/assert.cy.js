@@ -1,6 +1,6 @@
 context('Assertions Demo', ()=>{
 
-    it.only('Verify implicit assertion', ()=>{
+    it('Verify implicit assertion', ()=>{
 
         cy.visit('cypress/frontend/parent.html');
         cy.get('.assertion-table')
@@ -16,6 +16,17 @@ context('Assertions Demo', ()=>{
         .find('tbody tr:last')
         .contains('td','Erica')
         .should('be.visible');
+    })
+
+    it.only('Verify explicit assertion', ()=>{
+
+        expect(true).to.be.true;
+        const obj = {foo : 'bar'};
+        expect(obj).to.eq(obj);
+        expect(obj).to.deep.equal({foo : 'bar'});
+        expect('FooBar').to.match(/bar$/i);
+
+
     })
 
 })
